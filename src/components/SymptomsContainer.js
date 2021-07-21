@@ -16,8 +16,8 @@ class SymptomsContainer extends Component {
     render() {
         return ( 
             <div> 
-            Symptoms
-            <SymptomsForm/>
+                Symptoms Container 
+            {/* <SymptomsForm/> */}
             </div>
         ); 
     }
