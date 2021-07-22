@@ -4,9 +4,9 @@ class Nav extends React.Component{
     render() {
         return (
             <div>
-              <ul id="nav">
-                <li><a href="/">Home</a></li>
-                <li><a href="/About">About</a></li>
+              <ul id="nav" style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+                <a href="/">Home</a>
+                <a href="/About">About</a>
               </ul>
             </div>
         );

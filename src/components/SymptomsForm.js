@@ -1,6 +1,9 @@
+//local state is component state; isolated and local to component
+
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { addSymptom } from "../actions/symptomsAction";
+import { connect } from 'react-redux'
+import { addSymptom } from '../actions/symptomsAction'
+
 
 class SymptomsForm extends Component {
   state = {
@@ -9,21 +12,21 @@ class SymptomsForm extends Component {
     notes: "",
   };
 
-  handleChange = (e) => {
-    const { name, value } = e.target;
-    this.setState({
-      [name]: value,
-    });
-  };
+  handleChange = e => {
+      const { name, value } = e.target
+      this.setState({
+          [name]: value 
+      })
+  }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.addSymptom(this.state);
-  };
+  handleSubmit = e => {
+      e.preventDefault()
+      this.props.addSymptom(this.state)
+  }
+
 
   render() {
-    return (
-      //handlesubmit calls action that dispatches new obj to dispatch to update store state; action needs to post req to api to persist to db
+    return (   //handlesubmit calls action that dispatches new obj to dispatch to update store state; action needs to post req to api to persist to db
       <form onSubmit={this.handleSubmit}>
         <label> Title: </label>
         <input
@@ -48,11 +51,12 @@ class SymptomsForm extends Component {
           onChange={this.handleChange}
           name="notes"
         />
-        <br />
-        <input type="submit" value="Enter Symptoms" />
-      </form>
+        <br/>
+        <input type='submit' value="Enter Symptoms" /> 
+
+      </form> 
     );
   }
 }
 
-export default connect(null, { addSymptom })(SymptomsForm);
+export default connect(null, {addSymptom})(SymptomsForm);
