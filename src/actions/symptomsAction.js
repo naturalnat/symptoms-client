@@ -22,4 +22,5 @@ export const addSymptom = (symptom) => {
         dispatch({ type: 'ADD_SYMPTOMS', payload: symptoms })
       );
   };
+
 };

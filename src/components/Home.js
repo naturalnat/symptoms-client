@@ -1,11 +1,11 @@
-import React from 'react'; 
+import React from "react";
 
-const Home = () => { 
+const Home = () => {
   return (
     <div>
-        <li><a href="/symptoms">View Entries</a></li>
-        <li><a href="/newsymptom">New Entry</a></li>
+      <a href="/symptoms">View Entries</a> <br />
+      <a href="/newsymptom">New Entry</a>
     </div>
-  )
-}
+  );
+};
 export default Home;

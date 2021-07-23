@@ -9,7 +9,7 @@ class SymptomsForm extends Component {
   state = {
     title: "",
     severity: "",
-    notes: "",
+    notes: ""
   };
 
   handleChange = e => {
@@ -22,7 +22,14 @@ class SymptomsForm extends Component {
   handleSubmit = e => {
       e.preventDefault()
       this.props.addSymptom(this.state)
+      this.setState({
+        title: "",
+        severity: "",
+        notes: ""
+      })
   }
+
+
 
 
   render() {
