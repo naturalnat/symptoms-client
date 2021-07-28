@@ -20,6 +20,7 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(thunk))
 );
 
+
 ReactDOM.render(
   <Provider store={store}>
     <Router> 

@@ -1,7 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
+import { deleteSymptom } from "../actions/symptomsAction";
 
-const SymptomsList = ({ symptoms }) => {
+const SymptomsList = ({ symptoms, deleteSymptom }) => {
+  const handleDelete = (id) => 
+  {
+    deleteSymptom(id)
+  }
+
   return (
     <div>
       {symptoms.map((symptom) => (
@@ -10,6 +16,7 @@ const SymptomsList = ({ symptoms }) => {
             {symptom.title}
             {symptom.severity}
             {symptom.notes}
+            <button onClick={() => handleDelete(symptom.id)}>DELETE</button> 
           </li>
         </ul>
       ))}
@@ -23,4 +30,4 @@ const mapStateToProps = (state) => {
   return { symptoms: state.symptoms };
 };
 
-export default connect(mapStateToProps)(SymptomsList);
+export default connect(mapStateToProps, {deleteSymptom})(SymptomsList);

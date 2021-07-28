@@ -10,11 +10,12 @@ class SymptomsContainer extends Component {
         this.props.fetchSymptoms()
     }
 
+//do i *need* to return something here?
 
     render() {
         return ( 
             <div> 
-                Symptoms Container 
+                Symptoms Container
             </div>
         ); 
     }

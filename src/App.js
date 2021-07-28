@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div>
       <Nav />
-      <SymptomsContainer/>
+      <SymptomsContainer />
      <Router/> 
     </div>
   )
