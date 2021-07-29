@@ -3,10 +3,9 @@ import { connect } from "react-redux";
 import { deleteSymptom } from "../actions/symptomsAction";
 
 const SymptomsList = ({ symptoms, deleteSymptom }) => {
-  const handleDelete = (id) => 
-  {
-    deleteSymptom(id)
-  }
+  const handleDelete = (id) => {
+    deleteSymptom(id);
+  };
 
   return (
     <div>
@@ -16,7 +15,7 @@ const SymptomsList = ({ symptoms, deleteSymptom }) => {
             {symptom.title}
             {symptom.severity}
             {symptom.notes}
-            <button onClick={() => handleDelete(symptom.id)}>DELETE</button> 
+            <button onClick={() => handleDelete(symptom.id)}>DELETE</button>
           </li>
         </ul>
       ))}
@@ -25,9 +24,8 @@ const SymptomsList = ({ symptoms, deleteSymptom }) => {
 };
 
 //this makes symptom obj avaible as prop
-
 const mapStateToProps = (state) => {
   return { symptoms: state.symptoms };
 };
 
-export default connect(mapStateToProps, {deleteSymptom})(SymptomsList);
+export default connect(mapStateToProps, { deleteSymptom })(SymptomsList);

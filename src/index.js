@@ -10,10 +10,6 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import "./index.css";
 import App from "./App";
 
-//need to create store for redux
-//createStore. reducer, devtools
-
-//cant pass multiple reducers, need to be combined in rootReducer and passed through here 
 
 const store = createStore(
   rootReducer,

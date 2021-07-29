@@ -19,7 +19,7 @@ export const addSymptom = (symptom) => {
     })
       .then((res) => res.json())
       .then((symptoms) =>
-        dispatch({ type: 'ADD_SYMPTOMS', payload: symptoms })
+        dispatch({ type: "ADD_SYMPTOMS", payload: symptoms })
       );
   };
 };
@@ -28,12 +28,11 @@ export const deleteSymptom = (id) => {
   return (dispatch) => {
     fetch(`http://localhost:3000/symptoms/${id}`, {
       method: "DELETE",
-      // body: JSON.stringify(symptom),
       headers: { "Content-Type": "application/json" },
     })
       .then((res) => res.json())
       .then((symptom) =>
-        dispatch({ type: 'DELETE_SYMPTOM', payload: symptom})
+        dispatch({ type: "DELETE_SYMPTOM", payload: symptom })
       );
   };
 };
