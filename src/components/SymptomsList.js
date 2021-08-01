@@ -25,7 +25,7 @@ const cardStyle = {
             <b>Date:</b> {new Date(symptom.created_at).toLocaleString('en-US', {hour12: true})} <br />
             <b>Severity:</b> {symptom.severity} <br />
             <b>Notes:</b> {symptom.notes} <br />
-            <Button class="btn btn-warning" onClick={() => handleDelete(symptom.id)}>
+            <Button class="btn btn-secondary" onClick={() => handleDelete(symptom.id)}>
               Delete Entry
             </Button>
           </div>
