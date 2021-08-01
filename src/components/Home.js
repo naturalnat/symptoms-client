@@ -3,9 +3,13 @@ import SymptomsList from "./SymptomsList";
 
 const Home = () => {
   return (
+    <div class="container">
     <div>
-  <SymptomsList/>
-      <a href="/newsymptom">New Entry</a>
+      <a href="/newsymptom" class="btn btn-info" role="button">
+        New Entry
+      </a>
+      <SymptomsList />
+    </div>
     </div>
   );
 };

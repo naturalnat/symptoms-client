@@ -32,7 +32,8 @@ class SymptomsForm extends Component {
   render() {
     return (
       //handlesubmit calls action that dispatches new obj to dispatch to update store state; action needs to post req to api to persist to db
-      <form onSubmit={this.handleSubmit}>
+      <div class="container">
+       <form onSubmit={this.handleSubmit}>
         <label> Title: </label>
         <input
           type="text"
@@ -57,8 +58,9 @@ class SymptomsForm extends Component {
           name="notes"
         />
         <br />
-        <input type="submit" value="Enter Symptoms" />
+        <input class="btn btn-info" type="submit" value="Enter Symptoms" />
       </form>
+      </div>
     );
   }
 }

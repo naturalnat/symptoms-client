@@ -4,24 +4,31 @@ import { deleteSymptom } from "../actions/symptomsAction";
 import { Button } from '@material-ui/core';
 
 
+
 const SymptomsList = ({ symptoms, deleteSymptom }) => {
   const handleDelete = (id) => {
     deleteSymptom(id);
   };
 
+const cardStyle = {
+  marginLeft: "10px", 
+  marginTop: "10px",
+  width: "22rem"
+}
+
   return (
-    <div>
+    <div class="row">
       {symptoms.map((symptom) => (
-        <ul>
-          <li key={symptom.id}>
+        <div class="card" style={cardStyle}>
+          <div class="card-body" key={symptom.id}>
             {symptom.title} <br />
             Severity: {symptom.severity} <br />
             Notes: <br /> {symptom.notes} <br />
-            <Button onClick={() => handleDelete(symptom.id)}>
-              delete entry
+            <Button class="btn btn-warning" onClick={() => handleDelete(symptom.id)}>
+              Delete Entry
             </Button>
-          </li>
-        </ul>
+          </div>
+        </div>
       ))}
     </div>
   );
