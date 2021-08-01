@@ -14,3 +14,5 @@ export const symptomsReducer = (state = [], action) => {
       return state;
   }
 };
+
+//todo instead of raising an alert in the async-action, dispatch a failure (non-async)action inside the async action, that causes the web page to display an error message 

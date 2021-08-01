@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { deleteSymptom } from "../actions/symptomsAction";
+import { Button } from '@material-ui/core';
+
 
 const SymptomsList = ({ symptoms, deleteSymptom }) => {
   const handleDelete = (id) => {
@@ -12,10 +14,12 @@ const SymptomsList = ({ symptoms, deleteSymptom }) => {
       {symptoms.map((symptom) => (
         <ul>
           <li key={symptom.id}>
-            {symptom.title}
-            {symptom.severity}
-            {symptom.notes}
-            <button onClick={() => handleDelete(symptom.id)}>DELETE</button>
+            {symptom.title} <br />
+            Severity: {symptom.severity} <br />
+            Notes: <br /> {symptom.notes} <br />
+            <Button onClick={() => handleDelete(symptom.id)}>
+              delete entry
+            </Button>
           </li>
         </ul>
       ))}
@@ -23,7 +27,6 @@ const SymptomsList = ({ symptoms, deleteSymptom }) => {
   );
 };
 
-//this makes symptom obj avaible as prop
 const mapStateToProps = (state) => {
   return { symptoms: state.symptoms };
 };

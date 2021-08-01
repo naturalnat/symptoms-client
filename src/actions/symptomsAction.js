@@ -17,7 +17,12 @@ export const addSymptom = (symptom) => {
       body: JSON.stringify(symptom),
       headers: { "Content-Type": "application/json" },
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (res.status == 422) {
+          alert("Please fill out all fields");
+        }
+        return res.json();
+      })
       .then((symptoms) =>
         dispatch({ type: "ADD_SYMPTOMS", payload: symptoms })
       );

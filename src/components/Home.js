@@ -1,10 +1,10 @@
 import React from "react";
-import SymptomsContainer from './SymptomsContainer';
+import SymptomsList from "./SymptomsList";
 
 const Home = () => {
   return (
     <div>
-      <a href="/symptoms">View All Entries</a> <br />
+  <SymptomsList/>
       <a href="/newsymptom">New Entry</a>
     </div>
   );

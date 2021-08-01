@@ -3,6 +3,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addSymptom } from "../actions/symptomsAction";
+import { Button } from '@material-ui/core';
 
 class SymptomsForm extends Component {
   state = {

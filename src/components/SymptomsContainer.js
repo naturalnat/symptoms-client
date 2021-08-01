@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchSymptoms } from "../actions/symptomsAction";
 import SymptomsForm from "./SymptomsForm";
-import SymptomsList from "./SymptomsList";
+
 
 class SymptomsContainer extends Component {
   componentDidMount() {
@@ -10,7 +10,7 @@ class SymptomsContainer extends Component {
   }
 
   render() {
-    return <div>Symptoms Container</div>;
+    return <div>Keep track of your symptoms!</div>;
   }
 }
 
