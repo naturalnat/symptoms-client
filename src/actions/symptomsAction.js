@@ -18,6 +18,7 @@ export const addSymptom = (symptom) => {
       headers: { "Content-Type": "application/json" },
     })
       .then((res) => {
+        console.log(res.status);
         if (res.status == 422) {
           alert("Please fill out all fields");
         }

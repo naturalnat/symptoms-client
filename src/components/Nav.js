@@ -5,7 +5,7 @@ class Nav extends React.Component {
     return (
       <div style={{marginBottom:" 20px"}}>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
           Symptoms Tracker
         </a>
         <button

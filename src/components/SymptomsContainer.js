@@ -10,7 +10,7 @@ class SymptomsContainer extends Component {
   }
 
   render() {
-    return <div class="container"><div>Keep track of your symptoms!</div></div>;
+    return <div class="container"><div>Keep track of your symptoms!</div><br/></div>;
   }
 }
 
