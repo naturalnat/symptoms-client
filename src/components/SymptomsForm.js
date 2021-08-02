@@ -3,7 +3,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addSymptom } from "../actions/symptomsAction";
-import { Button } from '@material-ui/core';
 
 class SymptomsForm extends Component {
   state = {
@@ -11,6 +10,7 @@ class SymptomsForm extends Component {
     severity: "",
     notes: "",
   };
+
 
   handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,9 +32,18 @@ class SymptomsForm extends Component {
       this.props.history.push('/'); 
     }
   };
+  
+  // handleError = () => {
+  //   if (this.props.error) {
+  //     return (
+  //       <div className="error"> {this.props.error}</div>
+  //     )
+  //   }
+  // }
 
   render() {
     return (
+   
       //handlesubmit calls action that dispatches new obj to dispatch to update store state; action needs to post req to api to persist to db
       <div class="container">
        <form onSubmit={this.handleSubmit}>
@@ -78,5 +87,10 @@ class SymptomsForm extends Component {
     );
   }
 }
+
+
+// const mapStateToProps = (state) => {
+//   return { error: state.error };
+// };
 
 export default connect(null, { addSymptom })(SymptomsForm);

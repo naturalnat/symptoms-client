@@ -1,4 +1,5 @@
 //fetch symptoms from api
+// import axios from 'axios'
 
 export const fetchSymptoms = () => {
   return (dispatch) => {
@@ -18,7 +19,6 @@ export const addSymptom = (symptom) => {
       headers: { "Content-Type": "application/json" },
     })
       .then((res) => {
-        console.log(res.status);
         if (res.status == 422) {
           alert("Please fill out all fields");
         }
@@ -29,6 +29,32 @@ export const addSymptom = (symptom) => {
       );
   };
 };
+
+//was trying to work on error handling with axios: 
+
+// export const addSymptom = (symptom) => {
+//   return (dispatch) => {
+//     axios("http://localhost:3000/symptoms", {
+//       method: "POST",
+//       body: JSON.stringify(symptom),
+//       headers: { "Content-Type": "application/json" },
+//     })
+      // .then((res) => {
+      //   if (res.status == 422) {
+      //     throw new Error({message: "Can't be blank"})  
+      //   //   alert("Please fill out all fields");
+      //   }
+      //   return res.json();
+      // })
+//       .then((symptoms) =>
+//         dispatch({ type: "ADD_SYMPTOMS", payload: symptoms })
+//       ).catch(e => {
+//         dispatch({ type: "ERROR", payload: "can't be blank"})
+      
+//       })
+//   };
+// };
+
 
 export const deleteSymptom = (id) => {
   return (dispatch) => {
