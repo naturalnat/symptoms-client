@@ -5,10 +5,11 @@ export const symptomsReducer = (state = [], action) => {
     case 'ADD_SYMPTOMS': 
       return [...state, action.payload]; 
     case 'DELETE_SYMPTOM': 
-  
-    return [      
+      return [      
       ...state.filter(item => item.id !== action.payload)
      ]; 
+    case 'UPDATE_SYMPTOM':  
+      return state.map(item => item.id === action.payload.id ? action.payload : item);
     default:
       return state;
   }

@@ -4,7 +4,12 @@ const About = () => {
   return (
     <div class="container">
     <div>
-  Journal all of your symptoms with this app! 
+    Journal all of your symptoms with this app! 
+
+    <br/>   <br/>   <br/>   <br/>
+
+    Built by Natalie Taktachev    <br/>
+    <a href="https://github.com/naturalnat"> Github </a>
     </div>
     </div>
   )

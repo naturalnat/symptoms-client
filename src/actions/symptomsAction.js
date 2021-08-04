@@ -55,6 +55,19 @@ export const addSymptom = (symptom) => {
 //   };
 // };
 
+export const addFlag = (id) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/symptoms/${id}/addflag`, {
+      method: "POST",
+      //body: JSON.stringify(symptom),
+      headers: { "Content-Type": "application/json" },
+    })
+    .then((res) => res.json())
+    .then((symptom) =>
+      dispatch({ type: "UPDATE_SYMPTOM", payload: symptom })
+    );
+};
+};
 
 export const deleteSymptom = (id) => {
   return (dispatch) => {
