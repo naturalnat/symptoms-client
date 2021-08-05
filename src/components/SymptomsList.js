@@ -35,7 +35,7 @@ const SymptomsList = ({ symptoms, deleteSymptom, addFlag }) => {
             <b>Notes:</b> {symptom.notes} <br />
             {symptom.flag ? (
               <div>
-                <b>Flag:</b>{" "}
+          
                 <span style={{ color: "red" }}>
                   Important <i class="fa fa-medkit" aria-hidden="true"></i>
                 </span>
