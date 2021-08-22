@@ -11,6 +11,19 @@ export const fetchSymptoms = () => {
   };
 };
 
+export const editSymptom = (id) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/symptoms/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((res) => res.json())
+      .then((symptom) =>
+        dispatch({ type: "DELETE_SYMPTOM", payload: symptom })
+      );
+  };
+};
+
 export const addSymptom = (symptom) => {
   return (dispatch) => {
     fetch("http://localhost:3000/symptoms", {

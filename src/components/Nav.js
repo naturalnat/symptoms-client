@@ -27,6 +27,12 @@ class Nav extends React.Component {
               <a class="nav-item nav-link" href="/About">
                 About
               </a>
+              <a class="nav-item nav-link" href="/Login">
+                Login
+              </a>
+              <a class="nav-item nav-link" href="/Signup">
+                Sign Up 
+              </a>
             </div>
           </div>
         </nav>

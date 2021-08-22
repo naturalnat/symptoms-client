@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addSymptom } from "../actions/symptomsAction";
 
+
 class SymptomsForm extends Component {
   state = {
     title: "",

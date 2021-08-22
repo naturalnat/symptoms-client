@@ -6,6 +6,7 @@ class SymptomsContainer extends Component {
   componentDidMount() {
     this.props.fetchSymptoms();
   }
+  
 
   render() {
     return (

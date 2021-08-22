@@ -2,10 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import { deleteSymptom } from "../actions/symptomsAction";
 import { addFlag } from "../actions/symptomsAction";
+import { Link } from "react-router-dom";
 
-import { Button } from "@material-ui/core";
 
 const SymptomsList = ({ symptoms, deleteSymptom, addFlag }) => {
+
   const handleDelete = (id) => {
     deleteSymptom(id);
   };
@@ -21,10 +22,10 @@ const SymptomsList = ({ symptoms, deleteSymptom, addFlag }) => {
   };
 
   return (
-    <div class="row">
+    <div className="row">
       {symptoms.map((symptom) => (
-        <div class="card" style={cardStyle}>
-          <div class="card-body" key={symptom.id}>
+        <div className="card" style={cardStyle}>
+          <div className="card-body" key={symptom.id}>
             <h5>{symptom.title}</h5>
             <b>Date:</b>{" "}
             {new Date(symptom.created_at).toLocaleString("en-US", {
@@ -35,27 +36,35 @@ const SymptomsList = ({ symptoms, deleteSymptom, addFlag }) => {
             <b>Notes:</b> {symptom.notes} <br />
             {symptom.flag ? (
               <div>
-          
                 <span style={{ color: "red" }}>
-                  Important <i class="fa fa-medkit" aria-hidden="true"></i>
+                  Important <i className="fa fa-medkit" aria-hidden="true"></i>
                 </span>
               </div>
             ) : (
               ""
             )}
-            <Button
-              class="btn btn-secondary"
-              onClick={() => handleFlag(symptom.id)}
-            >
-            Flag
-            </Button>
-            &nbsp; &nbsp; 
-            <Button
-              class="btn btn-secondary"
-              onClick={() => handleDelete(symptom.id)}
-            >
+            <button
+              className="btn btn-secondary"
+              onClick={() => handleFlag(symptom.id)}>
+              Flag
+            </button>
+
+            &nbsp; &nbsp;
+            
+            <button
+              className="btn btn-secondary"
+              onClick={() => handleDelete(symptom.id)}>
               Delete Entry
-            </Button>
+              </button>
+
+            &nbsp; &nbsp;
+
+            {/* <Link to={`/editsymptom/${symptom.id}`} id={symptom.id}> <button
+              className="btn btn-secondary">
+              Edit
+            </button>
+            </Link>  */}
+
           </div>
         </div>
       ))}
