@@ -1,13 +1,10 @@
 import React from 'react'; 
-import Counter from './Counter'; 
 
 
 const About = () => { 
   return (
     <div class="container">
-      <Counter>
-        
-      </Counter>
+ 
     <div>
     Journal all of your symptoms with this app! 
 
