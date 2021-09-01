@@ -3,7 +3,7 @@
 
 export const fetchSymptoms = () => {
   return (dispatch) => {
-    fetch("/symptoms")
+    fetch("http://localhost:3000/symptoms")
       .then((res) => res.json())
       .then((symptoms) =>
         dispatch({ type: "FETCH_SYMPTOMS", payload: symptoms })
@@ -13,7 +13,7 @@ export const fetchSymptoms = () => {
 
 export const editSymptom = (id) => {
   return (dispatch) => {
-    fetch(`/symptoms/${id}`, {
+    fetch(`http://localhost:3000/symptoms/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
     })
@@ -26,7 +26,7 @@ export const editSymptom = (id) => {
 
 export const addSymptom = (symptom) => {
   return (dispatch) => {
-    fetch("/symptoms", {
+    fetch("http://localhost:3000//symptoms", {
       method: "POST",
       body: JSON.stringify(symptom),
       headers: { "Content-Type": "application/json" },
@@ -70,7 +70,7 @@ export const addSymptom = (symptom) => {
 
 export const addFlag = (id) => {
   return (dispatch) => {
-    fetch(`/symptoms/${id}/addflag`, {
+    fetch(`http://localhost:3000/symptoms/${id}/addflag`, {
       method: "POST",
       //body: JSON.stringify(symptom),
       headers: { "Content-Type": "application/json" },
@@ -84,7 +84,7 @@ export const addFlag = (id) => {
 
 export const deleteSymptom = (id) => {
   return (dispatch) => {
-    fetch(`/symptoms/${id}`, {
+    fetch(`http://localhost:3000/symptoms/${id}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
     })
